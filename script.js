@@ -51,7 +51,7 @@ function simpleCalculator() {
           result = num1 / num2;
           break;
       default:
-          result = 'Invalid operation';
+          result = 'Invalid operation'; 
   }
   document.getElementById('simpleCalculatorResult').innerText = 'Result: ' + result;
 }
