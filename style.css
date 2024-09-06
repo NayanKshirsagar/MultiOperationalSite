@@ -1,55 +1,273 @@
-/* styles.css */
-
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #121212;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: #e0e0e0;
   margin: 0;
   padding: 0;
 }
 
-.container {
-  max-width: 800px;
-  margin: 2em auto;
-  padding: 1em;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+/* Header Styling - Divided into two parts */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
 }
-
-h1, h2 {
-  color: #333;
-}
-
-.operation {
-  margin-bottom: 2em;
-}
-
-label {
-  display: block;
-  margin-top: 1em;
-}
-
-input, select {
-  display: block;
+.header-background{
   width: 100%;
-  padding: 0.5em;
-  margin-top: 0.5em;
-}
- 
-button {
-  display: block;
-  padding: 0.7em 1.5em;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  margin-top: 1em;
-}
-
-button:hover {
-  background-color: #0056b3;
+  background: repeating-linear-gradient(
+    -45deg,
+    #0d1117,
+    #0d1117 10px,
+    #13191f 10px,
+    #13191f 20px
+  );
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  display: flex;
 }
 
-p {
-  margin-top: 1em;
+/* Left part - Website Name */
+.header-left {
+  flex-basis: 50%;
+  text-align: left;
+  padding: 20px;
+  border-radius: 10px 0 0 10px;
+}
+
+.header-left h1 {
+  font-size: 2.5rem;
+  color: #4fd1c5;
+}
+
+/* Right part - Navigation Tabs */
+.header-right {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 0 10px 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #4fd1c5;
+  text-decoration: none;
   font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  background-color: #1a1a1a;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Footer Styling */
+footer {
+  background: repeating-linear-gradient(
+    -45deg,
+    #13191f,
+    #13191f 10px,
+    #0d1117 10px,
+    #0d1117 20px
+  );
+  padding: 20px;
+  text-align: center;
+  color: #4fd1c5;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content p, .footer-content a {
+  margin: 5px;
+  color: #4fd1c5;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 30px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+  filter: brightness(0) invert(0.8);
+}
+
+/* Calculator Container */
+.calculator-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 40px;
+  margin-top: 30px;
+}
+
+.calculator {
+  width: 40%;
+  background-color: #0d1117;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(79, 209, 197, 0.5);
+  margin: 20px;
+  padding: 40px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.calculator:hover {
+  transform: translateY(-5px);
+  background-color: #292929;
+  box-shadow: 0 0 25px rgba(79, 209, 197, 0.75);
+}
+
+/* Form Input and Button Styling */
+input[type="text"], input[type="number"], select {
+  font-size: 18px;
+  padding: 12px;
+  margin: 15px 0;
+  width: 150px;
+  border: 2px solid #4fd1c5;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(79, 209, 197, 0.2);
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+/* Button Styling - Keep Original for Calculate/Convert */
+button.calculate, button.convert {
+  padding: 14px 30px;
+  font-size: 18px;
+  background: #2d4f5a;
+  color: #4fd1c5;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 10px #4fd1c5;
+}
+
+button.calculate:hover, button.convert:hover {
+  background: #4fd1c5;
+  color: #0d1117;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #4fd1c5;
+}
+
+/* Reset Button - New Style */
+button.reset {
+  padding: 14px 30px;
+  font-size: 18px;
+  background: #ff4d4d;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 10px #ff4d4d;
+}
+
+button.reset:hover {
+  background: #ff6666;
+  color: #0d1117;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff6666;
+}
+
+/* Spacing Between Buttons */
+button + button {
+  margin-left: 20px;
+}
+
+/* Responsive Design for Calculators */
+@media (max-width: 768px) {
+  .calculator {
+    width: 100%;
+  }
+}
+
+/* Modal-Like Structure for About, Contact, Info Pages */
+.content-modal {
+  width: 80%;
+  max-width: 900px;
+  margin: 50px auto;
+  background-color: #0d1117;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 0 15px rgba(79, 209, 197, 0.5);
+  text-align: center;
+  color: #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.content-modal:hover {
+  transform: translateY(-5px);
+  background-color: #292929;
+  box-shadow: 0 0 25px rgba(79, 209, 197, 0.75);
+}
+
+.content-modal h2, .content-modal h3 {
+  color: #4fd1c5;
+}
+
+.content-modal p {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.content-modal ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.content-modal li {
+  margin: 10px 0;
+}
+
+.content-modal a {
+  color: #4fd1c5;
+  text-decoration: underline;
+}
+
+.content-modal a:hover {
+  color: #ffffff;
+}
+
+/* Responsive Design for Content Pages */
+@media (max-width: 768px) {
+  .content-modal {
+    width: 95%;
+  }
 }
